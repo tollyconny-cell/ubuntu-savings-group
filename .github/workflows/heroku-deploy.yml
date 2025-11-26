@@ -18,7 +18,7 @@ jobs:
       - name: Install dependencies
         run: |
           cd backend
-          npm ci
+          npm install --legacy-peer-deps
 
       - name: Login to Heroku Container Registry
         env:
@@ -35,5 +35,8 @@ jobs:
           git commit -m "Deploy to Heroku"
           # install heroku toolbelt CLI
           curl https://cli-assets.heroku.com/install.sh | sh
+          heroku git:remote -a ubuntusavings-backend
+          git push heroku HEAD:main --force
+
           heroku git:remote -a ubuntusavings-backend
           git push heroku HEAD:main --force
