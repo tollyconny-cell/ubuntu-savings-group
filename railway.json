@@ -1,0 +1,24 @@
+{
+  "name": "ubuntusavings-backend",
+  "plugins": [
+    {
+      "plugin": "node",
+      "name": "backend"
+    }
+  ],
+  "environments": {
+    "production": {
+      "variables": {
+        "STRIPE_SECRET_KEY": {
+          "value": "sk_test_replace_with_yours"
+        },
+        "STRIPE_WEBHOOK_SECRET": {
+          "value": "whsec_replace_with_yours"
+        },
+        "PORT": {
+          "value": "4242"
+        }
+      }
+    }
+  }
+}
